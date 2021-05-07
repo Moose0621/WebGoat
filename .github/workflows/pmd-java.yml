@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
  
-      - uses: Moose0621/setup-pmd@latest
+      - uses: Moose0621/setup-pmd@v2
       
       - name: run-pmd
         run: |
