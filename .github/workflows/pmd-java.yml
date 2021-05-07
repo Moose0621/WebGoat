@@ -16,5 +16,5 @@ jobs:
       
       - name: run-pmd
         run: |
-          ls -la
+          ls -la; ls -la ../
           pmd -d webgoat-container/,webgoat-server -f sarif -R rulesets/java/quickstart.xml
