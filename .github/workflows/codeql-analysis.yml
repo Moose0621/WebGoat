@@ -41,6 +41,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-java@v2
       with:
+        distribution: 'temurin'
         java-version: '16'
         cache: 'maven'
     # Initializes the CodeQL tools for scanning.
