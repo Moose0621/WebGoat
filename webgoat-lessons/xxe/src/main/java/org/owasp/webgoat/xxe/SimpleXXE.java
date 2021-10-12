@@ -23,7 +23,7 @@
 package org.owasp.webgoat.xxe;
 
 import org.apache.commons.exec.OS;
-import org.apache.commons.lang.exception.ExceptionUtils;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.owasp.webgoat.assignments.AssignmentEndpoint;
 import org.owasp.webgoat.assignments.AssignmentHints;
 import org.owasp.webgoat.assignments.AttackResult;
@@ -74,13 +74,13 @@ public class SimpleXXE extends AssignmentEndpoint {
         		secure = true;
         	}
             Comment comment = comments.parseXml(commentStr, secure);
-            System.err.println("Comment " + comment);
+            //System.err.println("Comment " + comment);
             comments.addComment(comment, false);
             if (checkSolution(comment)) {
                 return success(this).build();
             }
         } catch (Exception e) {
-            error = ExceptionUtils.getFullStackTrace(e);
+            error = ExceptionUtils.getStackTrace(e);
         }
         return failed(this).output(error).build();
     }
